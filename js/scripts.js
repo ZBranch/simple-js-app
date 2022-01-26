@@ -7,6 +7,7 @@ let pokemonList = [
   { name: "Nidoking", height: 1.4, types: ["Ground", "Poison"] },
 ];
 
-for (let i = 0; i < pokemonList.length; i++) {
-  document.write(i);
-}
+for (let i = 0; i < pokemonList.length; i++)
+  if (pokemonList[i]) {
+    document.write(pokemonList[i].name + " ")
+  }
