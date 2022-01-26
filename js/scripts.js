@@ -11,3 +11,11 @@ for (let i = 0; i < pokemonList.length; i++)
   if (pokemonList[i]) {
     document.write(pokemonList[i].name + " ")
   }
+
+  if (pokemonList[i].height >1.5){
+    document.write("This is a big Pokemon!")
+  } else if (pokemonList[i].height > 0.5 && pokemonList.height < 1.5){
+    document.write("This is an average Pokemon.");
+  } else {
+    document.write("This is a small Pokemon.")
+  }
