@@ -7,15 +7,15 @@ let pokemonList = [
   { name: "Nidoking", height: 1.4, types: ["Ground", "Poison"] },
 ];
 
-for (let i = 0; i < pokemonList.length; i++)
-document.write(
-  pokemonList[i].name + " (Height: " + pokemonList[i].height + ")"
-);
+for (let i = 0; i < pokemonList.length; i++) {
+  document.write(
+    pokemonList[i].name + " (Height: " + pokemonList[i].height + ")"
+  );
 
-  if (pokemonList[i].height >1.5){
-    document.write("This is a big Pokemon!")
-  } else if (pokemonList[i].height > 0.5 && pokemonList.height < 1.5){
-    document.write("This is an average Pokemon.");
+  if (pokemonList[i].height > 1.5) {
+    document.write("Wow, that's big!" + " ")
+    // Write a document.write() statement that prints " - Wow, that's big !" and add two line breaks (<br> tags)
   } else {
-    document.write("This is a small Pokemon.")
+    document.write(" ")
   }
+}
