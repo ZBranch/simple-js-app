@@ -13,9 +13,8 @@ for (let i = 0; i < pokemonList.length; i++) {
   );
 
   if (pokemonList[i].height > 1.5) {
-    document.write("Wow, that's big!" + " ")
-    // Write a document.write() statement that prints " - Wow, that's big !" and add two line breaks (<br> tags)
+    document.write("Wow, that's big!" + "<br>")
   } else {
-    document.write(" ")
+    document.write("<br>")
   }
 }
