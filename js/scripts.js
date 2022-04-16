@@ -18,18 +18,23 @@ let pokemonRepository = (function () {
   function getAll() {
     return pokemonList;
   }
+  function addListItem(pokemon){
+    let pokemonList = document.querySelector (".pokemon-list");
+    let listpokemon = document.createElement ("li");
+    let button = document.createElement("button");
+    button.innerText = pokemon.name;
+    button.classList.add("button-class");
+    listpokemon.appendChild(button);
+    pokemonList.appendChild(listpokemon);
+  }
 
   return {
     add: add,
     getAll: getAll,
+    addListItem: addListItem
   };
 })();
 
 pokemonRepository.getAll().forEach(function (pokemon) {
-  document.write(pokemon.name + " (Height: " + pokemon.height + ")");
-  if (pokemon.height > 1.5) {
-    document.write("Wow, that's big!" + "<br>");
-  } else {
-    document.write("<br>");
-  }
+  pokemonRepository.addListItem(pokemon);
 });
