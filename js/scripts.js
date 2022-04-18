@@ -37,4 +37,33 @@ let pokemonRepository = (function () {
 
 pokemonRepository.getAll().forEach(function (pokemon) {
   pokemonRepository.addListItem(pokemon);
+  let button = document.querySelector('Bulbasaur');
+  button.addEventListener('click', function (event) {
+    document.write(event);
+  });
+
+  let button = document.querySelector('Charizard');
+  button.addEventListener('click', function (event) {
+    document.write(event);
+  });
+
+  let button = document.querySelector('Squirtle');
+  button.addEventListener('click', function (event) {
+    document.write(event);
+  });
+
+  let button = document.querySelector('Pikachu');
+  button.addEventListener('click', function (event) {
+    document.write(event);
+  });
+
+  let button = document.querySelector('Rattata');
+  button.addEventListener('click', function (event) {
+    document.write(event);
+  });
+
+  let button = document.querySelector('Nidoking');
+  button.addEventListener('click', function (event) {
+    document.write(event);
+  });
 });
