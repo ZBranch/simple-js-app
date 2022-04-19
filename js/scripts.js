@@ -8,9 +8,6 @@ let pokemonRepository = (function () {
     { name: "Nidoking", height: 1.4, types: ["Ground", "Poison"] },
   ];
 
-  // let pokemonRepository = (function () {
-  // let pokemonList = [];
-
   function add(pokemon) {
     pokemonList.push(pokemon);
   }
@@ -18,52 +15,26 @@ let pokemonRepository = (function () {
   function getAll() {
     return pokemonList;
   }
-  function addListItem(pokemon){
-    let pokemonList = document.querySelector (".pokemon-list");
-    let listpokemon = document.createElement ("li");
+  function addListItem(pokemon) {
+    let pokemonList = document.querySelector(".pokemon-list");
+    let listpokemon = document.createElement("li");
     let button = document.createElement("button");
     button.innerText = pokemon.name;
     button.classList.add("button-class");
     listpokemon.appendChild(button);
     pokemonList.appendChild(listpokemon);
+    button.addEventListener("click", function () {
+      console.log(pokemon.name);
+    });
   }
 
   return {
     add: add,
     getAll: getAll,
-    addListItem: addListItem
+    addListItem: addListItem,
   };
 })();
 
 pokemonRepository.getAll().forEach(function (pokemon) {
   pokemonRepository.addListItem(pokemon);
-  let button = document.querySelector('Bulbasaur');
-  button.addEventListener('click', function (event) {
-    document.write(event);
-  });
-
-  let button = document.querySelector('Charizard');
-  button.addEventListener('click', function (event) {
-    document.write(event);
-  });
-
-  let button = document.querySelector('Squirtle');
-  button.addEventListener('click', function (event) {
-    document.write(event);
-  });
-
-  let button = document.querySelector('Pikachu');
-  button.addEventListener('click', function (event) {
-    document.write(event);
-  });
-
-  let button = document.querySelector('Rattata');
-  button.addEventListener('click', function (event) {
-    document.write(event);
-  });
-
-  let button = document.querySelector('Nidoking');
-  button.addEventListener('click', function (event) {
-    document.write(event);
-  });
 });
