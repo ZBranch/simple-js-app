@@ -78,8 +78,12 @@ let pokemonRepository = (function () {
       titleElement.innerText = pokemon.name;
 
       let heightElement = document.createElement("p");
+      heightElement.innerText = "Height: " + pokemon.height + " inches";
+
+      let container = document.querySelector('#image-container');
 
       let imageElement = document.createElement("img");
+      imageElement.src = 'https://pokeapi.co/api/v2/pokemon/?limit=150';
 
       modal.appendChild(closeButtonElement);
       modal.appendChild(titleElement);
@@ -166,7 +170,6 @@ document.querySelector('#show-modal').addEventListener('click', () => {
     });
 
 //})();
-
 
   return {
     add: add,
