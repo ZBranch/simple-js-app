@@ -54,14 +54,15 @@ let pokemonRepository = (function () {
 
   function showDetails(pokemon) {
     loadDetails(pokemon).then(function () {
-      console.log(pokemon);
+      showModal(pokemon);
     });
   }
 
 
-  let pokemonRepository = (function() {
+  //let pokemonRepository = (function() {
     let modalContainer = document.querySelector('#modal-container');
-    function showModal(title, text) {
+
+    function showModal(pokemon) {
       let modalContainer = document.querySelector('#modal-container');
       modalContainer.innerHTML = '';
 
@@ -74,18 +75,21 @@ let pokemonRepository = (function () {
       closeButtonElement.addEventListener('click', hideModal);
 
       let titleElement = document.createElement('h1');
-      titleElement.innerText = title;
+      titleElement.innerText = pokemon.name;
 
-      let contentElement = document.createElement('p');
-      contentElement.innerText = text;
+      let heightElement = document.createElement("p");
+
+      let imageElement = document.createElement("img");
 
       modal.appendChild(closeButtonElement);
       modal.appendChild(titleElement);
-      modal.appendChild(contentElement);
+      modal.appendChild(imageElement);
+      modal.appendChild(heightElement);
       modalContainer.appendChild(modal);
 
-      modalContainer.classList.add('is-visible');
-    }
+      modalContainer.classList.add("is-visible");
+}
+
 
     let dialogPromiseReject; // This can be set later, by showDialog
 
@@ -161,7 +165,7 @@ document.querySelector('#show-modal').addEventListener('click', () => {
       }
     });
 
-})();
+//})();
 
 
   return {
