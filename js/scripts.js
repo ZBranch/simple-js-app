@@ -63,6 +63,13 @@ let pokemonRepository = (function () {
     let modalContainer = document.querySelector('#modal-container');
 
     function showModal(pokemon) {
+      let modalBody = $(".modal-body");
+      let modalTitle = $(".modal-title");
+      let modalHeader = $(".modal-header");
+
+      modalTitle.empty();
+      modalBody.empty();
+
       let modalContainer = document.querySelector('#modal-container');
       modalContainer.innerHTML = '';
 
@@ -74,11 +81,20 @@ let pokemonRepository = (function () {
       closeButtonElement.innerText = 'Close';
       closeButtonElement.addEventListener('click', hideModal);
 
-      let titleElement = document.createElement('h1');
-      titleElement.innerText = pokemon.name;
+      //creating element for name in modal content
+      let nameElement = $("<h1>" + pokemon.name + "</h1>");
 
-      let heightElement = document.createElement("p");
-      heightElement.innerText = "Height: " + pokemon.height + " inches";
+      //creating element for height in modal content
+      let heightElement = $("<p>" + "<Height: " + pokemon.height + " inches" + "</p>");
+
+      //creating element for weight in modal content
+      let weightElement = $("<p>" + "Weight: " + pokemon.weight + "</p>");
+
+      //creating element for types in modal content
+      let typesElement = $("<p>" + "Types: " + pokemon.types + "</p>");
+
+      //creating element for abilities in modal content
+      let abilitiesElement = $("<p>" + "Abilities: " + pokemon.abilities + "</p>");
 
       let container = document.querySelector('#image-container');
 
@@ -86,7 +102,10 @@ let pokemonRepository = (function () {
       imageElement.src = pokemon.imageUrl;
 
       modal.appendChild(closeButtonElement);
-      modal.appendChild(titleElement);
+      modal.appendChild(nameElement);
+      modal.appendChild(weightElement);
+      modal.appendChild(typesElement);
+      modal.appendChild(abilitiesElement);
       modal.appendChild(imageElement);
       modal.appendChild(heightElement);
       modalContainer.appendChild(modal);
