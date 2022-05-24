@@ -33,7 +33,7 @@ let pokemonRepository = (function() {
     (e.innerHTML = ''), (n.innerHTML = '');
     const o = t.name.toUpperCase(),
       i = 'Height: ' + t.height + '"',
-      a = ' Types: ' + t.types.join(',');
+      a = ' Types: ' + t.types.join(', ');
     let c = document.createElement('img');
     c.classList.add('modal-img'),
       (c.src = t.imageUrl),
